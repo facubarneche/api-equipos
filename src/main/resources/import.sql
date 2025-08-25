@@ -26,4 +26,4 @@ INSERT INTO TEAM (ID, NAME, LEAGUE, COUNTRY) VALUES (DEFAULT, 'SSC Napoli', 'Ser
 INSERT INTO TEAM (ID, NAME, LEAGUE, COUNTRY) VALUES (DEFAULT, 'Atlético Madrid', 'La Liga', 'España');
 
 -- Insertamos la data por defecto en la tabla AUTH
-INSERT INTO AUTH (ID, NAME, LASTNAME, EMAIL, USERNAME, PASSWORD) VALUES (DEFAULT, 'NameTest', 'LastnameTest', 'test@test.com', 'test', '12345');
+INSERT INTO AUTH (ID, NAME, LASTNAME, EMAIL, USERNAME, PASSWORD) VALUES (DEFAULT, 'NameTest', 'LastnameTest', 'test@test.com', 'test', '$2a$10$Nk5q027NGhDBGTfdFdLeV.3bczlidp0/FniPXva.hTunfpTSHzmUe');
