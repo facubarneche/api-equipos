@@ -5,6 +5,7 @@ import equipos.model.dto.team.TeamResponseDTO;
 import equipos.service.TeamService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,13 +14,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/equipos")
+@RequiredArgsConstructor
 public class TeamController {
 
     private final TeamService teamService;
-
-    public TeamController(TeamService teamService) {
-        this.teamService = teamService;
-    }
 
     @GetMapping
     @Operation(summary = "Obtiene todos los equipos", description = "Obtiene la lista completa de equipos")

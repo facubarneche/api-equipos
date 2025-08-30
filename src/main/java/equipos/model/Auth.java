@@ -23,7 +23,5 @@ public class Auth {
 
     @JsonIgnore
     private String password;
-
-    public Auth() {
-    }
+    
 }

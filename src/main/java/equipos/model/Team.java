@@ -5,13 +5,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Team {
 
     @Id
@@ -22,15 +24,6 @@ public class Team {
     private String league;
     private String country;
 
-    public Team() {
-    }
-
-    public Team(String name, String league, String country) {
-        this.name = name;
-        this.league = league;
-        this.country = country;
-    }
-
     public void updateFromDTO(TeamRequestDTO dto) {
         this.name = dto.name();
         this.league = dto.league();
@@ -38,7 +31,11 @@ public class Team {
     }
 
     public static Team fromDTO(TeamRequestDTO dto) {
-        return new Team(dto.name(), dto.league(), dto.country());
+        return Team.builder()
+                .name(dto.name())
+                .league(dto.league())
+                .country(dto.country())
+                .build();
     }
 
 }

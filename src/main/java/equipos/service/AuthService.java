@@ -6,21 +6,17 @@ import equipos.model.dto.auth.LoginRequestDTO;
 import equipos.model.dto.auth.LoginResponseDTO;
 import equipos.repository.AuthRepository;
 import equipos.security.JWTUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class AuthService {
 
     private final AuthRepository authRepository;
-    private PasswordEncoder passwordEncoder;
-    private JWTUtils jwtUtils;
-
-    public AuthService(AuthRepository authRepository, PasswordEncoder passwordEncoder, JWTUtils jwtUtils) {
-        this.authRepository = authRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtUtils = jwtUtils;
-    }
+    private final PasswordEncoder passwordEncoder;
+    private final JWTUtils jwtUtils;
 
     public LoginResponseDTO login(LoginRequestDTO loginRequest) {
         Auth user = authRepository.findByUsername(loginRequest.username());

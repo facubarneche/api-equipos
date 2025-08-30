@@ -5,18 +5,16 @@ import equipos.model.Team;
 import equipos.model.dto.team.TeamRequestDTO;
 import equipos.model.dto.team.TeamResponseDTO;
 import equipos.repository.TeamRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class TeamService {
 
     private final TeamRepository teamRepository;
-
-    public TeamService(TeamRepository teamRepository) {
-        this.teamRepository = teamRepository;
-    }
 
     public List<TeamResponseDTO> getTeams() {
         return teamRepository.findAll().stream()
