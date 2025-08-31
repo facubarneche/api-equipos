@@ -1,7 +1,5 @@
-package equipos.controller;
+package equipos.exception;
 
-import equipos.exception.AuthException;
-import equipos.exception.NotFoundException;
 import equipos.model.dto.error.ErrorResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
